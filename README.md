@@ -138,7 +138,7 @@ https://studyfinder-dashboard.web.app
 - Dark and light mode
 - Responsive mobile layout
 - Smooth scrolling
-- - Reduced lag and optimized performance
+- Reduced lag and optimized performance
 - Final footer and version label
 
 ---
