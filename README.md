@@ -4,6 +4,8 @@ StudyFinder is a full-stack student productivity dashboard built with HTML, CSS,
 
 It helps students organize tasks, notes, study sessions, focus time, exams, resources, reminders, and progress in one clean dashboard.
 
+---
+
 ## Live Demo
 
 Add your deployed link here later:
@@ -12,11 +14,15 @@ Add your deployed link here later:
 https://your-live-link-here.com
 ```
 
+---
+
 ## Project Preview
 
 ![StudyFinder Landing Page](screenshots/landing.png)
 ![StudyFinder Dashboard](screenshots/dashboard.png)
 ![StudyFinder Mobile View](screenshots/mobile.png)
+
+---
 
 ## Features
 
@@ -105,6 +111,8 @@ https://your-live-link-here.com
 - Import local backup
 - Backup includes local exam, vault, and focus data
 
+---
+
 ## UI / UX
 
 - Premium landing page
@@ -114,6 +122,8 @@ https://your-live-link-here.com
 - Smooth scrolling
 - - Reduced lag and optimized performance
 - Final footer and version label
+
+---
 
 ## Performance Optimizations
 
@@ -126,6 +136,8 @@ https://your-live-link-here.com
 - Improved scrolling smoothness
 - Cleanup of unnecessary listeners and intervals
 
+---
+
 ## Tech Stack
 
 - HTML5
@@ -137,6 +149,8 @@ https://your-live-link-here.com
 - Browser Notification API
 - Web Audio API
 
+---
+
 ## Setup Instructions
 
 ```text
@@ -146,6 +160,8 @@ https://your-live-link-here.com
 4. Enable Firebase Authentication and Cloud Firestore
 5. Run the project using Live Server in VS Code
 ```
+
+---
 
 ## Folder Structure
 
@@ -158,6 +174,8 @@ StudyFinder/
 ├── firebase-config.js
 └── README.md
 ```
+
+---
 
 ## Firebase Usage
 
@@ -175,6 +193,8 @@ StudyFinder/
 
 - firebase-config.js
 
+---
+
 ## LocalStorage Usage
 
 #### Some lightweight local data is stored in the browser using localStorage:
@@ -187,6 +207,8 @@ StudyFinder/
 - Exam data
 - Vault data
 - Focus fallback data
+
+---
 
 ## What I Learned
 
@@ -203,16 +225,22 @@ StudyFinder/
 - Productivity dashboard logic
 - Debugging and performance optimization
 
+---
+
 ## Why I Built This
 
 I built StudyFinder to create a real-world student productivity platform that combines planning, focus management, analytics, reminders, and organization in one place.
 
 The project also helped me strengthen my understanding of frontend architecture, Firebase integration, real-time syncing, responsive design, and performance optimization while building a complete full-stack web application from scratch.
 
+---
+
 ## Current Version
 
 - StudyFinder v15
 - Step 46 Production Polish
+
+---
 
 ## Future Improvements
 
@@ -233,9 +261,13 @@ The project also helped me strengthen my understanding of frontend architecture,
 - Offline mode support
 - Additional accessibility improvements
 
+---
+
 ## Author
 
 - Built by Amber Mahajan.
+
+---
 
 ## License 
 
