@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -818,4 +819,826 @@
   <script type="module" src="app.js"></script>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>StudyFinder — Student Productivity Dashboard</title>
+
+  <meta
+    name="description"
+    content="StudyFinder is a full-stack student productivity dashboard with Firebase authentication, real-time tasks, Pomodoro focus tracking, notes, study planning, exam countdowns, smart reminders, and productivity analytics."
+  />
+
+  <meta name="theme-color" content="#020617" />
+  <meta name="application-name" content="StudyFinder" />
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%232563eb'/%3E%3Ctext x='50' y='61' font-size='38' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3ESF%3C/text%3E%3C/svg%3E"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+  <div class="bg-orb orb-three"></div>
+
+  <main class="app-shell">
+
+    <section class="container">
+
+      <div class="top-bar">
+        <div class="brand-block">
+          <div class="brand-icon">SF</div>
+          <div>
+            <p class="eyebrow">Student Command Center</p>
+            <h1>StudyFinder</h1>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <button id="back-btn" class="back-btn" style="display: none;">← Back</button>
+          <button id="theme-toggle-btn" class="theme-toggle-btn">Light Mode</button>
+        </div>
+      </div>
+
+      <!-- LANDING SCREEN -->
+      <section id="landing-section" class="landing-section">
+
+        <div class="landing-grid">
+
+          <div class="landing-copy">
+            <p class="eyebrow">Student Command Center</p>
+
+            <h2>
+              Turn study chaos into a clean, focused system.
+            </h2>
+
+            <p class="landing-text">
+              StudyFinder combines secure login, real-time tasks, progress tracking,
+              notes, priorities, deadlines, study planning, and a premium dashboard experience.
+            </p>
+
+            <div class="landing-actions">
+              <button id="enter-app-btn" class="primary-landing-btn">Enter Dashboard</button>
+            </div>
+          </div>
+
+          <div class="visual-stage" id="visual-stage">
+
+            <div class="floating-card card-main">
+              <p class="card-label">Today</p>
+              <h3>3 Priority Tasks</h3>
+              <div class="mini-progress">
+                <div></div>
+              </div>
+            </div>
+
+            <div class="floating-card card-small card-one">
+              <span>Focus</span>
+              <strong id="hero-focus-card">25m Session</strong>
+            </div>
+
+            <div class="floating-card card-small card-two">
+              <span>Tasks</span>
+              <strong id="hero-task-card">Task Control</strong>
+            </div>
+
+            <div class="floating-card card-small card-three">
+              <span>Exams</span>
+              <strong id="hero-exam-card">No Exams</strong>
+            </div>
+
+            <div class="planet-orb"></div>
+            <div class="ring ring-one"></div>
+            <div class="ring ring-two"></div>
+            
+          </div>
+
+          <div class="landing-feature-row compact-feature-row">
+
+            <div class="feature-pill compact-feature-pill">
+              <span>01</span>
+              <p>Smart Planning</p>
+            </div>
+
+            <div class="feature-pill compact-feature-pill">
+              <span>02</span>
+              <p>Focus Tracking</p>
+            </div>
+
+            <div class="feature-pill compact-feature-pill">
+              <span>03</span>
+              <p>Deadline Control</p>
+            </div>
+
+            <div class="feature-pill compact-feature-pill">
+              <span>04</span>
+              <p>Study Consistency</p>
+            </div>
+
+          </div>
+
+        </div> 
+
+      </section>
+
+      <!-- AUTH SECTION -->
+      <div id="auth-section" class="auth-layout" style="display: none;">
+
+        <div class="hero-card">
+          <p class="eyebrow">Student Command Center</p>
+          <h2>Organize your study life like a pro.</h2>
+          <p class="hero-text">
+            Track deadlines, priorities, notes, progress, and study sessions using a secure full-stack dashboard.
+          </p> 
+
+        </div>
+
+        <div class="panel auth-panel">
+          <h2>Login / Signup</h2>
+          <p class="section-subtitle">Access your private student workspace.</p>
+
+          <input type="email" id="email" placeholder="Enter email" />
+          <div class="password-field-wrap">
+            <input type="password" id="password" placeholder="Enter password" />
+            <button type="button" id="toggle-password-btn" class="toggle-password-btn">Show</button>
+          </div>
+
+          <div class="buttons">
+            <button id="signup-btn">Sign Up</button>
+            <button id="login-btn">Login</button>
+          </div>
+
+          <button id="google-login-btn" class="google-btn">Continue with Google</button>
+
+          <div class="auth-extra-actions">
+            <button id="forgot-password-btn" class="auth-link-btn">Forgot Password?</button>
+          </div>
+
+          <p id="auth-message" aria-live="polite"></p>
+        </div>
+
+      </div>
+
+      <!-- DASHBOARD -->
+      <div id="dashboard" style="display: none;">
+
+        <div class="dashboard-title-row">
+
+          <div class="dashboard-left-top">
+
+            <p class="eyebrow">Dashboard</p>
+
+            <h2>Welcome back!</h2>
+
+            <p id="user-email" class="user-email">
+              Logged in as: -
+            </p>
+
+            <div class="dashboard-link-password-box">
+              <input type="password" id="dashboard-link-password-input" placeholder="Create password login" />
+              <button id="dashboard-link-password-btn">Link Password</button>
+            </div>
+
+            <!-- QUICK SEARCH MOVED HERE -->
+
+            <section id="quick-search-section" class="quick-search-panel compact-search-panel premium-command-panel">
+
+              <div class="command-search-shell">
+                <span class="command-search-icon">⌘</span>
+
+                <input
+                  type="text"
+                  id="dashboard-command-input"
+                  placeholder="Search anything: tasks, notes, exams, vault..."
+                />
+              </div>
+
+              <div id="dashboard-command-results" class="dashboard-command-results premium-command-results">
+                <button type="button" data-target="command-center-section">Command Center</button>
+                <button type="button" data-target="tasks-section">Tasks</button>
+                <button type="button" data-target="study-planner-section">Planner</button>
+                <button type="button" data-target="notes-section">Notes</button>
+                <button type="button" data-target="focus-analytics-section">Focus</button>
+                <button type="button" data-target="exam-countdown-section">Exams</button>
+                <button type="button" data-target="study-vault-section">Vault</button>
+                <button type="button" data-target="heatmap-section">Heatmap</button>
+                <button type="button" data-target="smart-coach-section">Coach</button>
+                <button type="button" data-target="smart-reminders-section">Reminders</button>
+              </div>
+
+            </section>
+
+          </div>
+
+          <!-- RIGHT SIDE ACTIONS -->
+
+          <div class="dashboard-actions compact-dashboard-actions">
+
+            <button id="account-toggle-btn" class="top-action-btn">
+              Account
+            </button>
+
+            <button id="backup-toggle-btn" class="top-action-btn">
+              Backup
+            </button>
+
+            <button id="theme-toggle-dashboard" class="top-action-btn">
+              Theme
+            </button>
+
+            <button
+              id="sound-toggle-btn"
+              class="top-action-btn sound-toggle-btn"
+              aria-label="Toggle StudyFinder sound effects"
+            >
+              Sound On
+            </button>
+
+            <button
+              id="notification-toggle-btn"
+              class="top-action-btn notification-toggle-btn"
+              aria-label="Toggle StudyFinder browser notifications"
+            >
+              Notifications Off
+            </button>
+
+            <button id="logout-btn" class="top-action-btn logout-btn">
+              Logout
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- STEP 40 ACCOUNT INFO PANEL -->
+        <section id="account-info-section" class="panel account-info-panel utility-panel-hidden">
+          <div class="account-info-header">
+            <div>
+              <p class="eyebrow">Account</p>
+              <h3>Your Login Identity</h3>
+              <p class="section-subtitle">
+                A safe local view of your Firebase account providers.
+              </p>
+            </div>
+
+            <span id="account-provider-badge" class="account-provider-badge">Checking</span>
+          </div>
+
+          <div class="account-info-grid">
+            <div class="account-info-card">
+              <span>Name</span>
+              <strong id="account-display-name">-</strong>
+            </div>
+
+            <div class="account-info-card">
+              <span>Email</span>
+              <strong id="account-email">-</strong>
+            </div>
+
+            <div class="account-info-card">
+              <span>Login Provider</span>
+              <strong id="account-provider">-</strong>
+            </div>
+
+            <div class="account-info-card">
+              <span>Google Linked</span>
+              <strong id="account-google-linked">-</strong>
+            </div>
+
+            <div class="account-info-card">
+              <span>Password Linked</span>
+              <strong id="account-password-linked">-</strong>
+            </div>
+
+            <div class="account-info-card">
+              <span>UID</span>
+              <strong id="account-uid-short">-</strong>
+            </div>
+          </div>
+
+          <p id="account-auth-tip" class="account-auth-tip">
+            Login tip will appear here.
+          </p>
+        </section>
+
+        <!-- STEP 41 LOCAL BACKUP PANEL -->
+        <section id="backup-section" class="panel backup-panel utility-panel-hidden">
+          <div class="backup-header">
+            <div>
+              <p class="eyebrow">Local Backup</p>
+              <h3>Export / Import Local Data</h3>
+              <p class="section-subtitle">
+                Backup localStorage data only: exams, study vault, focus history, focus counters, and streaks.
+              </p>
+            </div>
+          </div>
+
+          <div class="backup-actions">
+            <button id="export-backup-btn">Export Backup</button>
+
+            <label for="import-backup-input" class="import-backup-label">
+              Import Backup
+            </label>
+
+            <input type="file" id="import-backup-input" accept="application/json" />
+          </div>
+
+          <p id="backup-message" class="backup-message" aria-live="polite">
+            Firestore tasks, notes, and study sessions are not exported yet because they are already stored in Firebase per user.
+          </p>
+        </section>
+
+        <!-- STEP 36 DASHBOARD COMMAND CENTER -->
+        <section id="command-center-section" class="panel command-center-panel">
+
+          <div class="command-center-header">
+            <div>
+              <p class="eyebrow">Today Command Center</p>
+              <h3>Your Study Brain</h3>
+              <p class="section-subtitle">
+                A quick summary of what needs your attention right now.
+              </p>
+            </div>
+          </div>
+
+          <div class="command-center-grid">
+
+            <div class="command-card">
+              <span class="command-label">Next Session</span>
+              <strong id="command-next-session">No session planned</strong>
+              <p id="command-next-session-detail">Add a study session to organize your day.</p>
+            </div>
+
+            <div class="command-card urgent-command-card">
+              <span class="command-label">Most Urgent Task</span>
+              <strong id="command-urgent-task">No urgent task</strong>
+              <p id="command-urgent-task-detail">Your urgent task will appear here.</p>
+            </div>
+
+            <div class="command-card">
+              <span class="command-label">Focus Recommendation</span>
+              <strong id="command-focus-recommendation">Ready</strong>
+              <p id="command-focus-detail">Complete one Pomodoro to build momentum.</p>
+            </div>
+
+            <div class="command-card">
+              <span class="command-label">Focus Today</span>
+              <strong id="command-focus-today">0 cycles</strong>
+              <p id="command-focus-streak">No streak yet.</p>
+            </div>
+
+            <div class="command-card exam-command-card">
+              <span class="command-label">Upcoming Exam</span>
+              <strong id="command-upcoming-exam">No exam added</strong>
+              <p id="command-upcoming-exam-detail">Add exams to activate revision mode.</p>
+            </div>
+
+            <div class="command-card score-command-card">
+              <span class="command-label">Study Balance Score</span>
+              <strong id="command-balance-score">0%</strong>
+              <p id="command-balance-detail">Add tasks and sessions to calculate your score.</p>
+            </div>
+
+          </div>
+
+        </section>
+
+        <section id="smart-reminders-section" class="panel smart-reminders-panel">
+
+          <div class="smart-reminders-header">
+            <div>
+              <p class="eyebrow">Smart Reminders</p>
+              <h3>Study Alerts</h3>
+              <p class="section-subtitle">
+                Smart reminders based on your tasks, exams, focus sessions, and study plan.
+              </p>
+            </div>
+          </div>
+
+          <div id="smart-reminders-list" class="smart-reminders-list">
+            <p class="empty-reminder">No reminders yet. Your dashboard looks clear.</p>
+          </div>
+
+        </section>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span id="total-count">0</span>
+            <p>Total Tasks</p>
+          </div>
+
+          <div class="stat-card">
+            <span id="pending-count">0</span>
+            <p>Pending</p>
+          </div>
+
+          <div class="stat-card">
+            <span id="completed-count">0</span>
+            <p>Completed</p>
+          </div>
+
+          <div class="stat-card">
+            <span id="overdue-count">0</span>
+            <p>Overdue</p>
+          </div>
+        </div>
+
+        <!-- SMART WIDGETS -->
+        <section class="smart-grid">
+
+          <div class="smart-card">
+            <p class="smart-label">Today</p>
+            <h3 id="today-count">0</h3>
+            <span>Tasks due today</span>
+          </div>
+
+          <div class="smart-card danger-smart">
+            <p class="smart-label">Urgent</p>
+            <h3 id="smart-overdue-count">0</h3>
+            <span>Overdue tasks</span>
+          </div>
+
+          <div class="smart-card priority-smart">
+            <p class="smart-label">Focus</p>
+            <h3 id="high-priority-count">0</h3>
+            <span>High priority pending</span>
+          </div>
+
+          <div class="smart-card success-smart">
+            <p class="smart-label">Completion</p>
+            <h3 id="completion-rate">0%</h3>
+            <span>Overall progress</span>
+          </div>
+
+        </section>
+
+        <section class="panel subject-tracker-panel">
+          <p class="eyebrow">Subject Intelligence</p>
+          <h3>Your Study Distribution</h3>
+
+          <div id="subject-tracker-list" class="subject-tracker-list">
+            <p class="empty-subject">No sessions yet.</p>
+          </div>
+        </section>
+
+        <section class="panel weekly-plan-panel">
+          <p class="eyebrow">Smart Weekly Plan</p>
+          <h3>Your Upcoming Sessions</h3>
+
+          <div id="weekly-plan-list" class="weekly-plan-list">
+            <p class="empty-subject">No sessions planned.</p>
+          </div>
+        </section>
+
+        <section id="focus-analytics-section" class="panel focus-analytics-panel">
+          <p class="eyebrow">Focus Analytics</p>
+          <h3>Your Focus Performance</h3>
+
+          <div class="focus-stats-grid">
+
+            <div class="focus-card-mini">
+              <span id="focus-total-sessions">0</span>
+              <p>Total Sessions</p>
+            </div>
+
+            <div class="focus-card-mini">
+              <span id="focus-total-minutes">0</span>
+              <p>Total Minutes</p>
+            </div>
+
+            <div class="focus-card-mini">
+              <span id="focus-today">0</span>
+              <p>Today</p>
+            </div>
+
+            <div class="focus-card-mini">
+              <span id="focus-streak">0</span>
+              <p>Streak</p>
+            </div>
+
+          </div>
+
+          <p class="focus-hint">
+            Focus sessions are counted when you complete a Pomodoro cycle.
+          </p>
+
+          <div class="focus-upgrade-grid">
+
+            <div class="focus-upgrade-card">
+              <span id="focus-last-7-minutes">0</span>
+              <p>Last 7 Days Minutes</p>
+            </div>
+
+            <div class="focus-upgrade-card">
+              <span id="focus-best-day">-</span>
+              <p>Best Focus Day</p>
+            </div>
+
+            <div class="focus-upgrade-card">
+              <span id="focus-average-active-day">0</span>
+              <p>Avg / Active Day</p>
+            </div>
+
+            <div class="focus-upgrade-card">
+              <span id="focus-score">0%</span>
+              <p>Focus Score</p>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="heatmap-section" class="panel heatmap-panel">
+          <div class="heatmap-header">
+            <div>
+              <p class="eyebrow">Study Heatmap</p>
+              <h3>Your 30-Day Study Activity</h3>
+              <p class="heatmap-description">
+                See whether your study routine is consistent or only happening in short bursts.
+              </p>
+            </div>
+          </div>
+
+          <div class="heatmap-summary-grid">
+            <div class="heatmap-summary-card">
+              <span id="heatmap-active-days">0</span>
+              <p>Active Days</p>
+            </div>
+
+            <div class="heatmap-summary-card">
+              <span id="heatmap-total-sessions">0</span>
+              <p>Total Sessions</p>
+            </div>
+
+            <div class="heatmap-summary-card">
+              <span id="heatmap-best-day">-</span>
+              <p>Best Day</p>
+            </div>
+
+            <div class="heatmap-summary-card">
+              <span id="heatmap-consistency-score">0%</span>
+              <p>Consistency</p>
+            </div>
+          </div>
+
+          <div id="heatmap-grid" class="heatmap-grid"></div>
+
+          <div class="heatmap-legend">
+            <span>No study</span>
+            <div class="legend-box legend-empty"></div>
+            <div class="legend-box legend-low"></div>
+            <div class="legend-box legend-medium"></div>
+            <div class="legend-box legend-high"></div>
+            <span>Heavy study</span>
+          </div>
+
+          <p class="heatmap-hint">
+            Each square represents one day. Hover over a square to see the exact date and number of planned sessions.
+          </p>
+        </section>
+
+        <section id="smart-coach-section" class="panel smart-suggestion-panel smart-coach-panel">
+          <div>
+            <p class="eyebrow">Smart Study Coach</p>
+            <h3 id="smart-suggestion-title">Ready to focus?</h3>
+            <p id="smart-suggestion-text">
+              Add your tasks and StudyFinder will suggest what to focus on first.
+            </p>
+
+            <div id="smart-coach-chips" class="smart-coach-chips">
+              <span>No insights yet</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 34 EXAM COUNTDOWN -->
+        <section id="exam-countdown-section" class="panel exam-panel">
+
+          <div class="exam-header">
+            <div>
+              <p class="eyebrow">Exam Countdown</p>
+              <h3>Revision Mode</h3>
+              <p class="section-subtitle">
+                Track upcoming exams, urgency, and what type of revision you should do next.
+              </p>
+            </div>
+          </div>
+
+          <div class="exam-form">
+            <input type="text" id="exam-name-input" placeholder="Exam name, e.g. Midterm Test" />
+
+            <input type="text" id="exam-subject-input" placeholder="Subject, e.g. Mathematics" />
+
+            <input type="date" id="exam-date-input" />
+
+            <button id="add-exam-btn">Add Exam</button>
+          </div>
+
+          <p id="exam-message" aria-live="polite"></p>
+
+          <div id="exam-list" class="exam-list">
+            <p class="empty-exams">No exams added yet.</p>
+          </div>
+
+        </section>
+
+        <!-- STEP 35 STUDY VAULT -->
+        <section id="study-vault-section" class="panel study-vault-panel">
+
+          <div class="vault-header">
+            <div>
+              <p class="eyebrow">Study Vault</p>
+              <h3>Resource Library</h3>
+              <p class="section-subtitle">
+                Save useful links, notes, videos, docs, and websites by subject.
+              </p>
+            </div>
+          </div>
+
+          <div class="vault-form">
+            <input type="text" id="vault-title-input" placeholder="Resource title, e.g. JavaScript Notes" />
+
+            <input type="text" id="vault-subject-input" placeholder="Subject, e.g. Computer Science" />
+
+            <input type="url" id="vault-url-input" placeholder="Resource URL, e.g. https://example.com" />
+
+            <button id="add-vault-resource-btn">Save Resource</button>
+          </div>
+
+          <p id="vault-message" aria-live="polite"></p>
+
+          <div id="vault-list" class="vault-list">
+            <p class="empty-vault">No resources saved yet.</p>
+          </div>
+
+        </section>
+   
+        <!-- STEP 26 STUDY PLANNER -->
+        <section id="study-planner-section" class="panel study-planner-panel">
+
+          <div class="planner-header">
+            <div>
+              <p class="eyebrow">Study Planner</p>
+              <h3>Plan Your Study Sessions</h3>
+              <p class="section-subtitle">
+                Schedule focused study blocks and keep your upcoming sessions organized.
+              </p>
+            </div>
+          </div>
+
+          <div class="session-form">
+            <input type="text" id="session-subject" placeholder="Subject or topic, e.g. Mathematics" />
+
+            <input type="date" id="session-date" />
+
+            <div class="time-row">
+              <input type="time" id="session-start" />
+              <input type="time" id="session-end" />
+            </div>
+
+            <button id="add-session-btn">Add Study Session</button>
+          </div>
+
+          <p id="session-message" aria-live="polite"></p>
+
+          <div id="session-loading" class="loading-text">Loading sessions...</div>
+
+          <ul id="session-list" class="session-list"></ul>
+
+        </section>
+
+        <div class="main-grid">
+
+          <section id="tasks-section" class="panel task-panel">
+
+            <div class="dashboard-header">
+              <div>
+                <h3>Your Study Tasks</h3>
+                <p id="progress-text">Completed: 0 / 0</p>
+
+                <div class="progress-bar">
+                  <div id="progress-fill" class="progress-fill"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="control-grid">
+              <input type="text" id="search-input" placeholder="Search tasks..." />
+
+              <select id="priority-filter">
+                <option value="all">All Priorities</option>
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+              </select>
+            </div>
+
+            <div class="filter-buttons">
+              <button class="filter-btn active-filter" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="pending">Pending</button>
+              <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <div class="task-form">
+              <input type="text" id="task-input" placeholder="Enter a new task" />
+
+              <select id="priority-input">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+              </select>
+
+              <input type="date" id="due-date-input" />
+
+              <button id="add-task-btn">Add Task</button>
+            </div>
+
+            <button id="clear-completed-btn" class="clear-btn">Clear Completed Tasks</button>
+
+            <p id="task-message" aria-live="polite"></p>
+
+            <div id="task-loading" class="loading-text">Loading tasks...</div>
+
+            <ul id="task-list"></ul>
+
+          </section>
+
+          <aside class="side-column">
+
+            <section class="panel focus-card">
+              <p class="eyebrow">Focus Mode</p>
+              <h3>Today’s Mission</h3>
+              <p id="mission-text">Complete one important task today.</p>
+            </section>
+
+            <section class="panel pomodoro-card">
+              <p class="eyebrow">Pomodoro Timer</p>
+              <h3>Focus Session</h3>
+
+              <div class="timer-display" id="timer-display">25:00</div>
+
+              <p id="timer-mode-text" class="timer-mode-text">Focus time</p>
+
+              <div class="timer-actions">
+                <button id="timer-start-btn">Start</button>
+                <button id="timer-pause-btn">Pause</button>
+                <button id="timer-reset-btn">Reset</button>
+              </div>
+
+              <p id="timer-message" class="timer-message">
+                Start a focused 25-minute study session.
+              </p>
+            </section>
+
+            <section class="panel mini-list-panel">
+              <p class="eyebrow">Priority Queue</p>
+              <h3>Next Best Tasks</h3>
+              <ul id="priority-queue-list" class="priority-queue-list">
+                <li>No priority tasks yet.</li>
+              </ul>
+            </section>
+
+            <section id="notes-section" class="panel notes-section">
+              <h3>Personal Notes</h3>
+              <p class="section-subtitle">Save study reminders, ideas, or quick notes.</p>
+
+              <textarea id="notes-input" placeholder="Write your study notes here..."></textarea>
+
+              <button id="save-notes-btn">Save Notes</button>
+
+              <div id="notes-loading" class="loading-text">Loading notes...</div>
+
+              <p id="notes-message" aria-live="polite"></p>
+            </section>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>
+      Built by Amber Mahajan · StudyFinder v15 · Full-stack student productivity dashboard
+    </p>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
+
+</body>
+>>>>>>> dc301204c9881d0828c8280c32623cc59a9eb77c
 </html>
