@@ -18,8 +18,28 @@ https://your-live-link-here.com
 
 ## Project Preview
 
+### Landing Page
+
 ![StudyFinder Landing Page](screenshots/landing.png)
-![StudyFinder Dashboard](screenshots/dashboard.png)
+
+### Authentication Page
+
+![StudyFinder Authentication Page](screenshots/auth.png)
+
+### Dashboard — Main Overview
+
+![StudyFinder Dashboard Top](screenshots/dashboard-top.png)
+
+### Dashboard — Command Center
+
+![StudyFinder Command Center](screenshots/dashboard-command-center.png)
+
+### Dashboard — Smart Reminders
+
+![StudyFinder Smart Reminders](screenshots/dashboard-reminders.png)
+
+### Mobile View
+
 ![StudyFinder Mobile View](screenshots/mobile.png)
 
 ---
@@ -97,7 +117,7 @@ https://your-live-link-here.com
 - Study balance score
 - Dashboard command search
 
-### Step 45 Smart Systems
+### Smart Reminders, Sounds, and Notifications
 
 - Premium lightweight sound effects
 - Sound on/off toggle
