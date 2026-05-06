@@ -8,10 +8,8 @@ It helps students organize tasks, notes, study sessions, focus time, exams, reso
 
 ## Live Demo
 
-Add your deployed link here later:
-
 ```text
-https://your-live-link-here.com
+https://studyfinder-dashboard.web.app
 ```
 
 ---
