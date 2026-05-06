@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyFinder Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+  <div class="bg-orb orb-three"></div>
+
+  <main class="app-shell">
+
+    <section class="container">
+
+      <div class="top-bar">
+        <div class="brand-block">
+          <div class="brand-icon">SF</div>
+          <div>
+            <p class="eyebrow">Full Stack Firebase App</p>
+            <h1>StudyFinder</h1>
+          </div>
+        </div>
+
+        <button id="theme-toggle-btn" class="theme-toggle-btn">Light Mode</button>
+      </div>
+
+      <!-- LANDING SCREEN -->
+      <section id="landing-section" class="landing-section">
+
+        <div class="landing-grid">
+
+          <div class="landing-copy">
+            <p class="eyebrow">Student Command Center</p>
+
+            <h2>
+              Turn study chaos into a clean, focused system.
+            </h2>
+
+            <p class="landing-text">
+              StudyFinder combines secure login, real-time tasks, progress tracking,
+              notes, priorities, deadlines, and a premium dashboard experience.
+            </p>
+
+            <div class="landing-actions">
+              <button id="enter-app-btn" class="primary-landing-btn">Enter Dashboard</button>
+              <span class="landing-mini-text">Built with Firebase Auth + Firestore</span>
+            </div>
+          </div>
+
+          <div class="visual-stage" id="visual-stage">
+
+            <div class="floating-card card-main">
+              <p class="card-label">Today</p>
+              <h3>3 Priority Tasks</h3>
+              <div class="mini-progress">
+                <div></div>
+              </div>
+            </div>
+
+            <div class="floating-card card-small card-one">
+              <span>Realtime</span>
+              <strong>Firestore Sync</strong>
+            </div>
+
+            <div class="floating-card card-small card-two">
+              <span>Secure</span>
+              <strong>User Data</strong>
+            </div>
+
+            <div class="floating-card card-small card-three">
+              <span>Focus</span>
+              <strong>Study Mode</strong>
+            </div>
+
+            <div class="planet-orb"></div>
+            <div class="ring ring-one"></div>
+            <div class="ring ring-two"></div>
+
+          </div>
+
+        </div>
+
+        <div class="landing-feature-row">
+          <div class="feature-pill">
+            <span>01</span>
+            <p>Authentication</p>
+          </div>
+
+          <div class="feature-pill">
+            <span>02</span>
+            <p>Real-time Database</p>
+          </div>
+
+          <div class="feature-pill">
+            <span>03</span>
+            <p>Task Intelligence</p>
+          </div>
+
+          <div class="feature-pill">
+            <span>04</span>
+            <p>Progress Tracking</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- AUTH SECTION -->
+      <div id="auth-section" class="auth-layout" style="display: none;">
+
+        <div class="hero-card">
+          <p class="eyebrow">Student Command Center</p>
+          <h2>Organize your study life like a pro.</h2>
+          <p class="hero-text">
+            Track deadlines, priorities, notes, progress, and study focus using a secure full-stack dashboard.
+          </p>
+
+          <div class="hero-grid">
+            <div>
+              <span>Auth</span>
+              <strong>Firebase</strong>
+            </div>
+            <div>
+              <span>Database</span>
+              <strong>Firestore</strong>
+            </div>
+            <div>
+              <span>Updates</span>
+              <strong>Real-time</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel auth-panel">
+          <h2>Login / Signup</h2>
+          <p class="section-subtitle">Access your private student workspace.</p>
+
+          <input type="email" id="email" placeholder="Enter email" />
+          <input type="password" id="password" placeholder="Enter password" />
+
+          <div class="buttons">
+            <button id="signup-btn">Sign Up</button>
+            <button id="login-btn">Login</button>
+          </div>
+
+          <button id="google-login-btn" class="google-btn">Continue with Google</button>
+
+          <p id="auth-message"></p>
+        </div>
+
+      </div>
+
+      <!-- DASHBOARD -->
+      <div id="dashboard" style="display: none;">
+
+        <div class="dashboard-title-row">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h2>Welcome back!</h2>
+            <p id="user-email" class="user-email">Logged in as: -</p>
+          </div>
+
+          <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span id="total-count">0</span>
+            <p>Total Tasks</p>
+          </div>
+
+          <div class="stat-card">
+            <span id="pending-count">0</span>
+            <p>Pending</p>
+          </div>
+
+          <div class="stat-card">
+            <span id="completed-count">0</span>
+            <p>Completed</p>
+          </div>
+
+          <div class="stat-card">
+            <span id="overdue-count">0</span>
+            <p>Overdue</p>
+          </div>
+        </div>
+
+        <!-- STEP 25 SMART WIDGETS -->
+        <section class="smart-grid">
+
+          <div class="smart-card">
+            <p class="smart-label">Today</p>
+            <h3 id="today-count">0</h3>
+            <span>Tasks due today</span>
+          </div>
+
+          <div class="smart-card danger-smart">
+            <p class="smart-label">Urgent</p>
+            <h3 id="smart-overdue-count">0</h3>
+            <span>Overdue tasks</span>
+          </div>
+
+          <div class="smart-card priority-smart">
+            <p class="smart-label">Focus</p>
+            <h3 id="high-priority-count">0</h3>
+            <span>High priority pending</span>
+          </div>
+
+          <div class="smart-card success-smart">
+            <p class="smart-label">Completion</p>
+            <h3 id="completion-rate">0%</h3>
+            <span>Overall progress</span>
+          </div>
+
+        </section>
+
+        <section class="panel smart-suggestion-panel">
+          <div>
+            <p class="eyebrow">Smart Study Suggestion</p>
+            <h3 id="smart-suggestion-title">Ready to focus?</h3>
+            <p id="smart-suggestion-text">
+              Add your tasks and StudyFinder will suggest what to focus on first.
+            </p>
+          </div>
+        </section>
+
+        <div class="main-grid">
+
+          <section class="panel task-panel">
+
+            <div class="dashboard-header">
+              <div>
+                <h3>Your Study Tasks</h3>
+                <p id="progress-text">Completed: 0 / 0</p>
+
+                <div class="progress-bar">
+                  <div id="progress-fill" class="progress-fill"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="control-grid">
+              <input type="text" id="search-input" placeholder="Search tasks..." />
+
+              <select id="priority-filter">
+                <option value="all">All Priorities</option>
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+              </select>
+            </div>
+
+            <div class="filter-buttons">
+              <button class="filter-btn active-filter" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="pending">Pending</button>
+              <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <div class="task-form">
+              <input type="text" id="task-input" placeholder="Enter a new task" />
+
+              <select id="priority-input">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+              </select>
+
+              <input type="date" id="due-date-input" />
+
+              <button id="add-task-btn">Add Task</button>
+            </div>
+
+            <button id="clear-completed-btn" class="clear-btn">Clear Completed Tasks</button>
+
+            <p id="task-message"></p>
+
+            <div id="task-loading" class="loading-text">Loading tasks...</div>
+
+            <ul id="task-list"></ul>
+
+          </section>
+
+          <aside class="side-column">
+
+            <section class="panel focus-card">
+              <p class="eyebrow">Focus Mode</p>
+              <h3>Today’s Mission</h3>
+              <p id="mission-text">Complete one important task today.</p>
+            </section>
+
+            <section class="panel mini-list-panel">
+              <p class="eyebrow">Priority Queue</p>
+              <h3>Next Best Tasks</h3>
+              <ul id="priority-queue-list" class="priority-queue-list">
+                <li>No priority tasks yet.</li>
+              </ul>
+            </section>
+
+            <section class="panel notes-section">
+              <h3>Personal Notes</h3>
+              <p class="section-subtitle">Save study reminders, ideas, or quick notes.</p>
+
+              <textarea id="notes-input" placeholder="Write your study notes here..."></textarea>
+
+              <button id="save-notes-btn">Save Notes</button>
+
+              <div id="notes-loading" class="loading-text">Loading notes...</div>
+
+              <p id="notes-message"></p>
+            </section>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>

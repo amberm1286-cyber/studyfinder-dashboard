@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "target": "studyfinder",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

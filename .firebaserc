@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "student-dashboard-ecad5"
+  },
+  "targets": {
+    "student-dashboard-ecad5": {
+      "hosting": {
+        "studyfinder": [
+          "studyfinder-dashboard"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
