@@ -12,6 +12,10 @@ It helps students organize tasks, notes, study sessions, focus time, exams, reso
 https://studyfinder-dashboard.web.app
 ```
 
+#### Or directly click below:
+
+[Open Student Dashboard](https://studyfinder-dashboard.web.app)
+
 ---
 
 ## Project Preview
