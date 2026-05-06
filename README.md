@@ -186,10 +186,19 @@ https://studyfinder-dashboard.web.app
 ```text
 StudyFinder/
 │
+├── screenshots/
+├── versions/
+│
 ├── index.html
 ├── styles.css
 ├── app.js
 ├── firebase-config.js
+│
+├── firebase.json
+├── .firebaserc
+├── .gitignore
+├── 404.html
+│
 └── README.md
 ```
 
